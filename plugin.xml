@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.kernix.pdfviewer"
+    version="1.0.0">
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+  <name>PDFViewer</name>
+  <description>PDFViewer phonegap plugin</description>
+  <author>Pierre-Emmanuel Bois</author>
+  <email>pebois@kernix.com</email>
+  <license>Apache 2.0 License</license>
+  <js-module src="www/pdfviewer.js" name="PDFViewer">
+    <clobbers target="PDFViewer" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="PDFViewer">
+        <param name="ios-package" value="PDFViewer"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/PDFViewer.h" />
+    <source-file src="src/ios/PDFViewer.m" />
+    <header-file src="src/ios/PDFViewerViewController.h" />
+    <source-file src="src/ios/PDFViewerViewController.m" />
+    <resource-file src="src/ios/PDFViewerViewController.xib" />
+  </platform>
+</plugin>
