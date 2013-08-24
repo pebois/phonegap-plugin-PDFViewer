@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     NSString *url = [fileURL relativeString];
     NSArray *parts = [url componentsSeparatedByString:@"/"];
     if ([parts count] > 1) {
@@ -46,6 +46,16 @@
     
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [plugin.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
+    CGRect frame = navBar.frame;
+    if (UIInterfaceOrientationIsPortrait(orientation)) {
+        frame.size.height = 44;
+    } else {
+        frame.size.height = 32;
+    }
+    navBar.frame = frame;
 }
 
 - (void)setFileURL:(NSURL *)url
