@@ -34,6 +34,10 @@
     } else {
         navBar.topItem.title = @"";
     }
+    webView.backgroundColor = [UIColor darkGrayColor];
+	webView.scalesPageToFit = YES;
+	webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    webView.delegate = self;
     [webView loadRequest:[NSURLRequest requestWithURL:fileURL]];
 }
 
@@ -64,5 +68,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

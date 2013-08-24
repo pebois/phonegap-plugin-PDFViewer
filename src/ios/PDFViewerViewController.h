@@ -8,7 +8,7 @@
 #import <Cordova/CDV.h>
 #import <UIKit/UIKit.h>
 
-@interface PDFViewerViewController : UIViewController {
+@interface PDFViewerViewController : UIViewController <UIWebViewDelegate> {
     NSURL *fileURL;
     CDVPlugin *plugin;
     CDVInvokedUrlCommand *command;
