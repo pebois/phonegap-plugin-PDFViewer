@@ -38,22 +38,7 @@
 }
 
 - (IBAction)close {
-    CGRect optionsFrame = self.view.frame;
-    optionsFrame.origin.x = 0;
-    optionsFrame.size.width = 320;
-    optionsFrame.origin.y = 423;
-    optionsFrame.origin.y = 0;
-
-    self.view.frame = optionsFrame;
-    
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-    [UIView setAnimationDuration:.3];
-    optionsFrame.origin.y += optionsFrame.size.height;
-    self.view.frame = optionsFrame;
-    [UIView setAnimationDelegate:self.view];
-    [UIView setAnimationDidStopSelector:@selector(removeFromSuperview)];
-    [UIView commitAnimations];
+    [self dismissModalViewControllerAnimated:YES];
     
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [plugin.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
