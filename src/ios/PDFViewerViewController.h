@@ -10,15 +10,17 @@
 
 @interface PDFViewerViewController : UIViewController <UIWebViewDelegate> {
     NSURL *fileURL;
+    NSString *fileTitle;
     CDVPlugin *plugin;
     CDVInvokedUrlCommand *command;
     IBOutlet UIWebView *webView;
     IBOutlet UIBarButtonItem *barButton;
-    IBOutlet UINavigationBar *navBar;
+    IBOutlet UINavigationItem *navItem;
 }
 
 - (IBAction)close;
 - (void)setFileURL:(NSURL *)url;
+- (void)setFileTitle:(NSString *)title;
 - (void)setPlugin:(CDVPlugin *)cdvPlugin;
 - (void)setCommand:(CDVInvokedUrlCommand *)cdvCommand;
 

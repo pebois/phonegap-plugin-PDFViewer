@@ -26,41 +26,49 @@
 {
     [super viewDidLoad];
     
+    webView.delegate = self;
+    
     NSString *url = [fileURL relativeString];
-    NSArray *parts = [url componentsSeparatedByString:@"/"];
-    if ([parts count] > 1) {
-        NSString *filename = [parts objectAtIndex:[parts count]-1];
-        navBar.topItem.title = filename;
+    if ([fileTitle length] > 0) {
+        navItem.title = fileTitle;
     } else {
-        navBar.topItem.title = @"";
+        NSArray *parts = [url componentsSeparatedByString:@"/"];
+        if ([parts count] > 1) {
+            NSString *filename = [parts objectAtIndex:[parts count]-1];
+            navItem.title = filename;
+
+        }
     }
     webView.backgroundColor = [UIColor darkGrayColor];
 	webView.scalesPageToFit = YES;
 	webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
     webView.delegate = self;
     [webView loadRequest:[NSURLRequest requestWithURL:fileURL]];
+
 }
 
-- (IBAction)close {
-    [self dismissModalViewControllerAnimated:YES];
-    
+- (void)webViewDidFinishLoad:(UIWebView *)theWebView {
+}
+
+- (IBAction)close
+{
+    if ([self respondsToSelector:@selector(dismissViewControllerAnimated:completion:)]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self dismissModalViewControllerAnimated:YES];
+    }
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [plugin.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)orientation duration:(NSTimeInterval)duration {
-    CGRect frame = navBar.frame;
-    if (UIInterfaceOrientationIsPortrait(orientation)) {
-        frame.size.height = 44;
-    } else {
-        frame.size.height = 32;
-    }
-    navBar.frame = frame;
 }
 
 - (void)setFileURL:(NSURL *)url
 {
     fileURL = url;
+}
+
+- (void)setFileTitle:(NSString *)title
+{
+    fileTitle = title;
 }
 
 - (void)setPlugin:(CDVPlugin *)cdvPlugin

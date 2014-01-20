@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="com.kernix.pdfviewer"
-    version="1.0.0">
+    version="1.1.0">
   <engines>
     <engine name="cordova" version=">=3.0.0" />
   </engines>
@@ -23,6 +23,6 @@
     <source-file src="src/ios/PDFViewer.m" />
     <header-file src="src/ios/PDFViewerViewController.h" />
     <source-file src="src/ios/PDFViewerViewController.m" />
-    <resource-file src="src/ios/PDFViewerViewController.xib" />
+    <resource-file src="src/ios/PDFViewerViewController.storyboard" />
   </platform>
 </plugin>

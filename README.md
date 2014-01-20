@@ -7,13 +7,13 @@ PDFViewer phonegap plugin
 
 ## Platforms ##
 
-* IOS
+* IOS (6 & 7)
 
 ## Using the plugin ##
 
 ### Open ###
 ```
-PDFViewer.open("sample","pdf", function (msg) {
+PDFViewer.open("file://sample.pdf","sample.pdf", function (msg) {
     console.log(msg);
 });
 ```
