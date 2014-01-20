@@ -13,24 +13,16 @@
 - (void)open:(CDVInvokedUrlCommand*)command
 {
     NSString* url = [command.arguments objectAtIndex:0];
-    NSString* fileTitle = [command.arguments objectAtIndex:1];
+    NSString* ext = [command.arguments objectAtIndex:1];
     if (url != nil && [url length] > 0) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSURL *fileURL = [NSURL URLWithString:url];
+            NSURL *fileURL = [[NSBundle mainBundle] URLForResource:url withExtension:ext];
             if (fileURL) {
-                pdfviewerViewController = [[UIStoryboard storyboardWithName:@"PDFViewerViewController" bundle:nil] instantiateViewControllerWithIdentifier:@"PDFViewer"];
-                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:pdfviewerViewController];
+                pdfviewerViewController = [[PDFViewerViewController alloc] initWithNibName:@"PDFViewerViewController" bundle:nil];
                 [pdfviewerViewController setPlugin:self];
                 [pdfviewerViewController setCommand:command];
                 [pdfviewerViewController setFileURL:fileURL];
-                if (fileTitle != nil && [fileTitle length] > 0) {
-                    [pdfviewerViewController setFileTitle:fileTitle];
-                }
-                if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]){
-                    [[self viewController] presentViewController:navigationController animated:YES  completion:nil];
-                } else {
-                    [[self viewController] presentModalViewController:navigationController animated:YES];
-                }
+                [[self viewController] presentModalViewController:pdfviewerViewController animated:YES];
             }
         });
     } else {
