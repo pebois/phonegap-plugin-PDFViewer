@@ -9,7 +9,7 @@ PDFViewer phonegap plugin
 
 ## Screenshots ##
 
-![screenshot](https://raw.github.com/pebois/phonegap-plugin-PDFViewer/master/sample2.png) ![screenshot](https://raw.github.com/pebois/phonegap-plugin-PDFViewer/master/sample3.png)
+![screenshot](https://raw.github.com/pebois/phonegap-plugin-PDFViewer/master/sample2.png) &nbsp;&nbsp; ![screenshot](https://raw.github.com/pebois/phonegap-plugin-PDFViewer/master/sample3.png)
 
 ## Using the plugin ##
 
