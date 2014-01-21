@@ -6,10 +6,10 @@
 //  MIT Licensed
 
 var PDFViewer = {
-    open: function (url, ext, callback) {
+    open: function (url, title, callback) {
         cordova.exec(callback, function (err) {
-            callback('Error: Preview');
-        }, "PDFViewer", "open", [url, ext]);
+                callback('Error: Preview');
+            }, "PDFViewer", "open", [url, title]);
     }
 };
 
