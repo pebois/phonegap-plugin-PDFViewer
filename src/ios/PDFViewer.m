@@ -29,7 +29,6 @@
                 }
                 if ([self respondsToSelector:@selector(presentViewController:animated:completion:)]){
                     [[self viewController] presentViewController:navigationController animated:YES  completion:nil];
-                    NSLog(@"toto");
                 } else {
                     [[self viewController] presentModalViewController:navigationController animated:YES];
                 }
