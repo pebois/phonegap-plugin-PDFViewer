@@ -8,7 +8,9 @@
 #import <Cordova/CDV.h>
 #import <UIKit/UIKit.h>
 
-@interface PDFViewerViewController : UIViewController <UIWebViewDelegate> {
+@interface PDFViewerViewController : UIViewController <UIWebViewDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate> {
+    BOOL isStatusBarHidden;
+    CGPoint lastOffset;
     NSURL *fileURL;
     NSString *fileTitle;
     CDVPlugin *plugin;
