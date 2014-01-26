@@ -26,17 +26,17 @@
         <!--Viewer View Controller - PDFViewer-->
         <scene sceneID="IdW-4g-14f">
             <objects>
-                <viewController storyboardIdentifier="PDFViewer" id="jnK-AQ-8Gr" customClass="PDFViewerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PDFViewer" automaticallyAdjustsScrollViewInsets="NO" id="jnK-AQ-8Gr" customClass="PDFViewerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T1s-2Q-Civ"/>
                         <viewControllerLayoutGuide type="bottom" id="z6M-H2-ORo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jva-Jt-72b">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cW-zO-JMK">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -49,7 +49,6 @@
                             <constraint firstItem="3cW-zO-JMK" firstAttribute="top" secondItem="jva-Jt-72b" secondAttribute="top" id="rmo-Sa-FVg"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="PDFViewer" id="O8g-uV-DqG">
                         <barButtonItem key="leftBarButtonItem" title="Fermer" id="hGE-Ux-moW">
                             <connections>
