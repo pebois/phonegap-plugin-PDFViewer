@@ -10,6 +10,10 @@
   <author>Pierre-Emmanuel Bois</author>
   <email>pebois@kernix.com</email>
   <license>Apache 2.0 License</license>
+  
+  <dependency id="org.apache.cordova.file" url="https://github.com/apache/cordova-plugin-file.git" />
+  <dependency id="org.apache.cordova.file-transfer" url="https://github.com/apache/cordova-plugin-file-transfer.git" />
+    
   <js-module src="www/pdfviewer.js" name="PDFViewer">
     <clobbers target="PDFViewer" />
   </js-module>
