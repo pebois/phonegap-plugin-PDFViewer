@@ -14,7 +14,7 @@ PDFViewer phonegap plugin
 ## Using the plugin ##
 
 ### Open ###
-```
+```js
 PDFViewer.open("file://sample.pdf","sample.pdf", function (msg) {
     console.log(msg);
 });
