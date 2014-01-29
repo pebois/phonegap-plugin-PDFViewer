@@ -9,7 +9,7 @@
   <description>PDFViewer phonegap plugin</description>
   <author>Pierre-Emmanuel Bois</author>
   <email>pebois@kernix.com</email>
-  <license>Apache 2.0 License</license>
+  <license>MIT</license>
   <js-module src="www/pdfviewer.js" name="PDFViewer">
     <clobbers target="PDFViewer" />
   </js-module>
